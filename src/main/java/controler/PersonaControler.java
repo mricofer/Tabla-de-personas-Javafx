@@ -18,7 +18,7 @@ public class PersonaControler implements Initializable {
     @FXML
     private TextField txtNombre;
     @FXML
-    private TextField txtApellido;
+    private TextField txtApellidos;
     @FXML
     private TextField txtEdad;
     @FXML
@@ -41,13 +41,16 @@ public class PersonaControler implements Initializable {
         this.colNombre.setCellValueFactory(new PropertyValueFactory("nombre"));
         this.colApellidos.setCellValueFactory(new PropertyValueFactory("apellidos"));
         this.colEdad.setCellValueFactory(new PropertyValueFactory("edad"));
+
+        tblPersonas.setItems(personas);
     }
 
+    @FXML
     private void agregarPersona(ActionEvent event){
 
         try{
             String nombre = this.txtNombre.getText();
-            String apellidos = this.txtApellido.getText();
+            String apellidos = this.txtApellidos.getText();
             int edad = Integer.parseInt(this.txtEdad.getText());
 
             Persona p = new Persona(nombre, apellidos, edad);

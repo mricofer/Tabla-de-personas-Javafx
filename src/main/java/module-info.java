@@ -2,9 +2,9 @@ module com.example.tablaPersonas {
     requires javafx.controls;
     requires javafx.fxml;
 
-    requires org.controlsfx.controls;
-    requires org.kordamp.bootstrapfx.core;
-
     opens controler to javafx.fxml;
+    opens model to javafx.base;
+
     exports controler;
+    exports model;
 }
